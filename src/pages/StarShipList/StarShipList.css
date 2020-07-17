@@ -1,0 +1,31 @@
+.StarShipList {
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url('https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-16.jpg');
+    background-size: cover;
+  }
+
+  .StarShipList-title {
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
+  }
+
+  .StarShipList-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 120px;
+      width: 200px;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 20px;
+      white-space: normal;
+  }
+
+  

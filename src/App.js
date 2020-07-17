@@ -10,13 +10,17 @@ import { getAllStarships } from './services/sw-api';
 class App extends Component {
 
   state = {
-    starships: []
+    starships: [],
+    selStarship: {}
+  }
+
+  handleStarshipSelection = (starship) => {
+    this.setState({ selStarship: starship })
   }
 
   async componentDidMount() {
-    const starships = await getAllStarships();
-    console.log(starships);
-    this.setState({ starships });
+    const { results } = await getAllStarships();
+    this.setState({ starships : results });
   }
 
   render() {
@@ -27,10 +31,14 @@ class App extends Component {
         </header>
         <Switch>
           <Route exact path="/" render={ props =>
-            <StarShipList starships={this.state.starships} {...props}/>
+            <StarShipList 
+              starships={this.state.starships} 
+              handleStarshipSelection={this.handleStarshipSelection} 
+              {...props}
+            />
           }/>
           <Route exact path="/:id" render={ props =>
-            <StarShipDetail {...props}/>
+            <StarShipDetail starship={this.state.selStarship} {...props}/>
           }/>
         </Switch>
       </div>

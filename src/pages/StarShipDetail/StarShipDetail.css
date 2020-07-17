@@ -1,0 +1,33 @@
+.StarShipDetail {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: opacity 1s;
+    animation: fade 3s infinite;
+  }
+
+.StarShipDetail-info {
+    background: rgba(0,0,0,0.7);
+    min-height: 120px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(200,200,200);
+    border-radius: 8px;
+}
+
+.StarShipDetail-info > h1 {
+    max-width: 380px;
+    margin: 0 5px 15px 5px;
+    font-size: 50px;
+}
+
+.StarShipDetail-info > a {
+    margin-bottom: 10px;
+}
+
