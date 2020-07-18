@@ -5,8 +5,8 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    transition: opacity 1s;
-    animation: fade 3s infinite;
+    background-color: black;
+    background-image: none;
   }
 
 .StarShipDetail-info {
