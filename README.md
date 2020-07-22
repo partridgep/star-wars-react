@@ -2,6 +2,9 @@
 
 A simple React app for displaying Star Wars Data from the Star Wars API. V1 only includes starship data.
 
+## Getting Started
+Click [here](https://star-wars-react-api.herokuapp.com/) to get started (please allow 20-30 seconds for Heroku to warm up.)
+
 ## Technologies
 
 * React
@@ -39,3 +42,4 @@ This app uses `react-transition-group` to enable transitions between pages and s
 ## Icebox
 
 * More Star Wars Data Visualization
+* Add Pagination
