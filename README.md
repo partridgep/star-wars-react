@@ -26,9 +26,9 @@ At `ComponentDidMount()`, once all the starship data has been loaded from the St
 
 At this point, on the Starship details page, we map through this starship array and create a button for each that links to their individual Starship detail page.
 
-On user click on one of these buttons, we set state so that the selected starship property matches the clicked item. Additionally, we call a function to select a corresponding background image for the ship page (often randomly selecting from an array of multiple possible backgrounds, like for the Star Destroyer.) We set state for the ship background property to the result of that function.
+On user click on one of these buttons, we set state so that the selected starship property matches the clicked item. Additionally, we call a function to select a corresponding background image for the ship page (often randomly selecting from an array of multiple possible backgrounds, like for the Star Destroyer.) We set state for the ship background property to the result of that function. Finally, we load the pilot data from the API for each of the pilot links in the starship object.
 
-We then load the Starship Detail page, passing down the starship object and the background image as props, so that they may be rendered on the page.
+We then load the Starship Detail page, passing down the starship object, the background image, and the array of pilots as props, so that they may be rendered on the page.
 
 ## Animations & Transitions
 
@@ -38,5 +38,4 @@ This app uses `react-transition-group` to enable transitions between pages and s
 
 ## Icebox
 
-* Load pilot data for each ship
 * More Star Wars Data Visualization

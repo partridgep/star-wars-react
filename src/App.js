@@ -76,7 +76,6 @@ class App extends Component {
 
   async handleGetPilots(starship) {
     const pilots = await getAllPilots(starship.pilots);
-    console.log(pilots);
     this.setState({ pilots });
   }
 
@@ -113,7 +112,12 @@ class App extends Component {
                   />
                 }/>
                 <Route exact path="/:id" render={ props =>
-                  <StarShipDetail starship={this.state.selStarship} shipBackground={this.state.shipBackground} pilots={this.state.pilots} {...props}/>
+                  <StarShipDetail 
+                    starship={this.state.selStarship} 
+                    shipBackground={this.state.shipBackground} 
+                    pilots={this.state.pilots} 
+                    {...props}
+                  />
                 }/>
               </Switch>
             </Transition>
