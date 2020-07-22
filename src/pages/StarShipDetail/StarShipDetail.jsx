@@ -5,6 +5,13 @@ import './StarShipDetail.css';
 
 function StarShipDetail(props) {
 
+    let pilotList = [];
+    for (var pilot of props.pilots) {
+        pilotList.push(pilot.name)
+    };
+
+    const pilotString = pilotList.join(', ');
+
     return (
         <div 
             className='StarShipDetail'
@@ -21,6 +28,7 @@ function StarShipDetail(props) {
                 <p>Manufacturer: {props.starship.manufacturer}</p>
                 <p>Cost: {props.starship.cost_in_credits} credits</p>
                 <p>Max Atmosphering Speed: {props.starship.max_atmosphering_speed}</p>
+                <p>Pilots: {props.pilots.length > 1 ? pilotString : 'No pilots'}</p>
                 <Link to="/">RETURN TO ALL STARSHIPS</Link>
             </div>
             </div>

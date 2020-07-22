@@ -7,7 +7,7 @@ import { play } from './timelines'
 import StarShipDetail from './pages/StarShipDetail/StarShipDetail';
 import StarShipList from './pages/StarShipList/StarShipList';
 
-import { getAllStarships } from './services/sw-api';
+import { getAllStarships, getAllPilots } from './services/sw-api';
 
 
 //background constants
@@ -65,11 +65,19 @@ class App extends Component {
   state = {
     starships: [],
     selStarship: {},
+    pilots: [],
     shipBackground: ''
   }
 
   handleStarshipSelection = (starship) => {
-    this.setState({ selStarship: starship, shipBackground: selBackground(starship.name) })
+    this.setState({ selStarship: starship, shipBackground: selBackground(starship.name)})
+    this.handleGetPilots(starship);
+  }
+
+  async handleGetPilots(starship) {
+    const pilots = await getAllPilots(starship.pilots);
+    console.log(pilots);
+    this.setState({ pilots });
   }
 
   async componentDidMount() {
@@ -100,11 +108,12 @@ class App extends Component {
                   <StarShipList 
                     starships={this.state.starships} 
                     handleStarshipSelection={this.handleStarshipSelection} 
+                    handleGetPilots={this.handleGetPilots}
                     {...props}
                   />
                 }/>
                 <Route exact path="/:id" render={ props =>
-                  <StarShipDetail starship={this.state.selStarship} shipBackground={this.state.shipBackground} {...props}/>
+                  <StarShipDetail starship={this.state.selStarship} shipBackground={this.state.shipBackground} pilots={this.state.pilots} {...props}/>
                 }/>
               </Switch>
             </Transition>
